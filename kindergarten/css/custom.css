@@ -384,8 +384,8 @@ header .main-navigation nav .navbar-nav .nav-link.active{color:var(--jm-gold-l) 
 /* The banner wedge used to run the full height of the hero and its hypotenuse
    crossed the headline at 1280, putting white type on cream. It is now held to
    the right of the text column at every width it is shown. */
-#banner-header-svg{left:auto; right:0; width:56%; height:58%;}
-@media (max-width:1279px){ #banner-header-svg{width:50%; height:50%;} }
+#banner-header-svg{left:auto; right:0; width:40%; height:56%;}
+@media (max-width:1279px){ #banner-header-svg{width:36%; height:48%;} }
 
 /* heading levels were corrected for document outline; the template styled these
    by tag name, so the styles are reattached by class */
@@ -398,4 +398,35 @@ header .main-navigation nav .navbar-nav .nav-link.active{color:var(--jm-gold-l) 
   margin:28px 0 14px; font-weight:700;}
 @media (max-width:991px){
   .about .feature-item .features-content .jm-feature-title{font-size:20px;}
+}
+
+/* ============================================================
+   Hero portrait.
+   The opening picture was a 16:9 landscape in a 540x304 box: his face
+   filled about seven percent of it and the first thing the eye met was
+   the back of a child's head. It is now a 3:4 portrait cropped on him,
+   roughly twice as tall, so the subject leads the page.
+   The mouse parallax was removed with it: it keyed off absolute page
+   coordinates, so the picture jumped the moment the pointer entered
+   the hero and drifted out of alignment with the headline.
+   ============================================================ */
+.banner-slider .banner-image{justify-content:flex-end;}
+.banner-slider .slider-img-area{position:relative; display:inline-block; max-width:470px; width:100%; margin-top:26px;}
+/* no offset block here: it collided with the cream wedge behind the photo and
+   the two shapes read as a mistake. The wedge is the hero's only accent. */
+.banner-slider .slider-img-area #slider-inner-img{position:relative; z-index:2; transform:none;
+  width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; object-position:center 22%;
+  border-radius:6px; box-shadow:0 30px 70px rgba(4,9,18,.55);}
+
+/* a little more air under the headline lockup */
+.banner-slider .heading-area .heading{margin-bottom:26px;}
+.banner-slider .heading-area .text{margin-bottom:0;}
+
+@media (max-width:1279px){
+  .banner-slider .slider-img-area{max-width:380px; margin-top:18px;}
+}
+@media (max-width:991px){
+  .banner-slider .banner-image{justify-content:center;}
+  .banner-slider .slider-img-area{max-width:300px; margin-top:0;}
+  .banner-slider .slider-img-area #slider-inner-img{width:100%; padding-top:0;}
 }
