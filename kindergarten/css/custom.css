@@ -1,0 +1,401 @@
+/* ============================================================
+   John Moran. Palette and component overrides.
+   Measured contrast ratios, WCAG AA:
+                        on navy    on cream   on white
+   --jm-cream  #F4EEE2    13.44        .          .
+   --jm-white  #FFFFFF    15.51        .          .
+   --jm-sky    #AFB7C6     7.60        .          .
+   --jm-gold-l #C9A14A     6.39        .          .
+   --jm-navy   #15243F       .       13.44      15.51
+   --jm-body   #33373D       .       10.36      11.95
+   --jm-mute   #5A5F66       .        5.57       6.43
+   --jm-gold-d #7A5616       .        5.74       6.62
+   Decorative only (never carries text):
+   --jm-gold   #9A6E1F  3.96 on cream
+   ============================================================ */
+
+:root{
+  --jm-navy:#15243F;
+  --jm-navy-2:#1C3157;
+  --jm-cream:#F4EEE2;
+  --jm-white:#FFFFFF;
+  --jm-sky:#AFB7C6;
+  --jm-gold-l:#C9A14A;
+  --jm-gold-d:#7A5616;
+  --jm-gold:#9A6E1F;
+  --jm-body:#33373D;
+  --jm-mute:#5A5F66;
+  --jm-line:rgba(21,36,63,.14);
+}
+
+/* ---------- base ---------- */
+body{background:var(--jm-white); color:var(--jm-body); font-family:'Roboto',sans-serif;}
+.bg-purple{background-color:var(--jm-navy) !important;}
+.bg-yellow{background-color:var(--jm-cream) !important;}
+
+.jm-skip{position:absolute; left:-9999px; top:0; z-index:99999; background:var(--jm-navy); color:#fff;
+  padding:14px 22px; font-size:16px; font-weight:600; border-radius:0 0 6px 0;}
+.jm-skip:focus{left:0; color:#fff; text-decoration:none;}
+
+/* ---------- buttons ---------- */
+.btn.btn-pink,.pink-and-purple-btn{background:var(--jm-gold-d) !important; border-color:var(--jm-gold-d) !important; color:#fff !important;}
+.btn.btn-pink:hover,.pink-and-purple-btn:hover{background:var(--jm-navy) !important; border-color:var(--jm-navy) !important; color:#fff !important;}
+
+/* ---------- wordmark ---------- */
+.jm-wordmark{display:inline-flex; flex-direction:column; line-height:1.15; text-decoration:none !important; padding:6px 0;}
+.jm-wordmark-name{font-family:'Playfair Display',Georgia,serif; font-size:26px; font-weight:700; letter-spacing:.3px; color:#fff;}
+.jm-wordmark-role{font-size:11px; font-weight:600; letter-spacing:1.6px; text-transform:uppercase; color:var(--jm-gold-l); margin-top:3px;}
+.inner-header.sticky .jm-wordmark-name,.affix .jm-wordmark-name{color:var(--jm-navy);}
+.inner-header.sticky .jm-wordmark-role,.affix .jm-wordmark-role{color:var(--jm-gold-d);}
+.jm-wordmark-side .jm-wordmark-name{color:#fff;}
+
+/* ---------- nav ---------- */
+header .nav-link{color:#fff !important; font-weight:500;}
+header .nav-link:hover,header .nav-link.active{color:var(--jm-gold-l) !important;}
+.inner-header.sticky .nav-link,.affix .nav-link{color:var(--jm-navy) !important;}
+.inner-header.sticky .nav-link:hover,.inner-header.sticky .nav-link.active,
+.affix .nav-link:hover,.affix .nav-link.active{color:var(--jm-gold-d) !important;}
+.side-menu .nav-link{color:#fff !important;}
+.side-menu .nav-link:hover{color:var(--jm-gold-l) !important;}
+.sidemenu_btn span{background:#fff;}
+.inner-header.sticky .sidemenu_btn span,.affix .sidemenu_btn span{background:var(--jm-navy);}
+
+/* ---------- banner ---------- */
+.banner-slider .sub-heading,.about .sub-heading,.testimonial-title .sub-heading{
+  font-family:'Roboto',sans-serif; font-size:13px; font-weight:700; letter-spacing:2.2px;
+  text-transform:uppercase; color:var(--jm-gold-l); display:block; margin-bottom:18px;}
+.about .sub-heading{color:var(--jm-gold-l);}
+.banner-slider .heading,.about .heading,.testimonial-title .heading{
+  font-family:'Playfair Display',Georgia,serif; color:#fff; font-weight:700; line-height:1.15;}
+.banner-slider .heading{font-size:58px;}
+.banner-slider .heading span{font-size:34px; font-weight:400; color:var(--jm-sky); margin-top:10px; letter-spacing:0;}
+.banner-slider .text,.about .text{color:var(--jm-sky); font-size:17px; line-height:1.85;}
+.about .text + .text{margin-top:18px;}
+.banner-slider .button{display:inline-flex; align-items:center; gap:10px; margin-top:30px;
+  background:var(--jm-gold-l); color:var(--jm-navy); font-weight:700; font-size:14px; letter-spacing:1.2px;
+  text-transform:uppercase; padding:16px 34px; border-radius:2px; text-decoration:none !important;}
+.banner-slider .button:hover{background:#fff; color:var(--jm-navy);}
+.banner-slider .button i{font-size:13px;}
+#slider-inner-img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:6px;
+  box-shadow:0 26px 60px rgba(0,0,0,.42);}
+/* the HTML width/height attributes are a presentational hint: without height:auto the
+   attribute height wins and the CSS aspect-ratio is ignored entirely. */
+
+/* ---------- about ---------- */
+.about .heading{font-size:40px;}
+.about .heading span{display:block; color:var(--jm-gold-l); font-size:34px; font-weight:400;}
+.about_img img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:6px;
+  box-shadow:0 22px 50px rgba(0,0,0,.35);}
+.green_rectangle{background:var(--jm-gold-d) !important; opacity:.9;}
+.feature-item{display:flex; gap:18px; margin-top:30px;}
+.feature-item .laptop-features-icon .icon{display:inline-flex; align-items:center; justify-content:center;
+  width:52px; height:52px; border-radius:50%; background:rgba(201,161,74,.16); color:var(--jm-gold-l); font-size:22px;}
+.feature-item .features-content h4{font-family:'Playfair Display',Georgia,serif; color:#fff; font-size:21px; margin-bottom:8px;}
+.feature-item .features-content p{color:var(--jm-sky); font-size:16px; line-height:1.8; margin:0;}
+
+/* ---------- stats ---------- */
+.company-stats-section .stats-block-inner i{color:var(--jm-gold-d); font-size:40px;}
+.company-stats-section .stats-number-inner{font-family:'Playfair Display',Georgia,serif;
+  color:var(--jm-navy); font-size:46px; font-weight:700; margin:12px 0 6px;}
+.company-stats-section .paragraph{color:var(--jm-mute); font-size:15px; line-height:1.6; max-width:260px; margin:0 auto;}
+
+/* ---------- gallery ---------- */
+.portfolio-sec{background:var(--jm-white); padding:100px 0;}
+.portfolio-sec .heading{font-family:'Playfair Display',Georgia,serif; color:var(--jm-navy);
+  font-size:40px; font-weight:700; line-height:1.2;}
+.portfolio-sec .heading span{color:var(--jm-mute); font-weight:400;}
+.cbp-l-filters-button .cbp-filter-item{background:transparent; border:1px solid var(--jm-line);
+  color:var(--jm-body); font-size:14px; font-weight:600; letter-spacing:.4px; padding:10px 22px;
+  margin:0 8px 10px 0; border-radius:2px;}
+.cbp-l-filters-button .cbp-filter-item:hover{color:#fff; background:var(--jm-navy); border-color:var(--jm-navy);}
+.cbp-l-filters-button .cbp-filter-item-active{color:#fff !important; background:var(--jm-navy) !important; border-color:var(--jm-navy) !important;}
+#js-grid-mosaic img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;}
+.portfolio-hover-effect{background:linear-gradient(to top,rgba(10,18,32,.92) 0%,rgba(10,18,32,.55) 45%,rgba(10,18,32,.12) 100%);}
+.hover-text{padding:26px;}
+.p-hover-title{font-family:'Playfair Display',Georgia,serif; color:#fff; font-size:22px; margin-bottom:4px;}
+.p-hover-des{color:#E3E6EC; font-size:15px; margin:0;}
+
+/* ---------- what is next ---------- */
+.testimonial-title .heading{font-size:40px;}
+.testimonial-title .heading span{color:var(--jm-sky); font-weight:400; font-size:34px;}
+.jm-next-row{margin-top:50px;}
+.jm-next-card{background:rgba(255,255,255,.06); border:1px solid rgba(201,161,74,.28);
+  border-radius:6px; padding:34px 28px; height:100%;}
+.jm-next-icon{display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px;
+  border-radius:50%; background:rgba(201,161,74,.18); color:var(--jm-gold-l); font-size:26px; margin-bottom:20px;}
+.jm-next-title{font-family:'Playfair Display',Georgia,serif; color:#fff; font-size:23px; margin-bottom:12px; line-height:1.3;}
+.jm-next-text{color:var(--jm-sky); font-size:16px; line-height:1.8; margin:0;}
+.jm-next-fig{margin:56px 0 0;}
+.jm-next-fig img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:6px;
+  box-shadow:0 22px 50px rgba(0,0,0,.4);}
+.jm-next-fig figcaption{color:var(--jm-sky); font-size:15px; text-align:center; padding-top:14px;}
+
+/* ---------- contact ---------- */
+.contact-sec .contact-sub{font-size:13px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase;
+  color:var(--jm-gold-d); display:block; margin-bottom:16px;}
+.contact-sec .contact-head{font-family:'Playfair Display',Georgia,serif; color:var(--jm-navy);
+  font-size:42px; font-weight:700; margin-bottom:16px;}
+.contact-sec .text{color:var(--jm-body); font-size:17px; line-height:1.85;}
+.contact-sec .country{font-family:'Playfair Display',Georgia,serif; color:var(--jm-navy); font-size:20px; margin:28px 0 12px;}
+.contact-sec ul{list-style:none; padding:0; margin:0;}
+.contact-sec ul li{color:var(--jm-body); font-size:16px; line-height:1.7; margin-bottom:12px; display:flex; gap:10px; align-items:flex-start;}
+.contact-sec ul li i{color:var(--jm-gold-d); font-size:20px; margin-top:2px;}
+.contact-sec ul li a{color:var(--jm-body); text-decoration:underline; text-underline-offset:3px; word-break:break-word;}
+.contact-sec ul li a:hover{color:var(--jm-gold-d);}
+.jm-reach{background:#fff; border:1px solid var(--jm-line); border-radius:6px; padding:40px 36px;}
+.jm-reach .contact-heading{font-family:'Playfair Display',Georgia,serif; color:var(--jm-navy); font-size:28px; margin-bottom:10px;}
+.jm-reach .contact-para{color:var(--jm-mute); font-size:16px; line-height:1.75; margin-bottom:26px;}
+.jm-reach-list{list-style:none; padding:0; margin:0;}
+.jm-reach-list li{border-top:1px solid var(--jm-line); padding:16px 0; display:flex; flex-direction:column; gap:4px;}
+.jm-reach-label{font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:var(--jm-mute);}
+.jm-reach-link{color:var(--jm-navy); font-size:17px; font-weight:600; text-decoration:underline; text-underline-offset:3px; word-break:break-word;}
+.jm-reach-link:hover{color:var(--jm-gold-d);}
+.jm-reach-plain{color:var(--jm-body); font-size:17px;}
+
+/* ---------- footer ---------- */
+.footer-style-1{padding:34px 0; border-top:1px solid var(--jm-line);}
+.footer-style-1 .company-about{color:var(--jm-mute); font-size:15px; margin:0;}
+.go-top{background:var(--jm-navy); color:#fff;}
+
+/* ---------- responsive ---------- */
+@media (max-width:1199px){
+  .banner-slider .heading{font-size:46px;}
+  .banner-slider .heading span{font-size:28px;}
+  .about .heading,.portfolio-sec .heading,.testimonial-title .heading,.contact-sec .contact-head{font-size:34px;}
+  .about .heading span,.testimonial-title .heading span{font-size:28px;}
+}
+@media (max-width:991px){
+  .jm-wordmark-role{display:none;}
+  .banner-slider .heading{font-size:38px;}
+  .banner-slider .heading span{font-size:24px;}
+  .banner-image{padding-top:40px;}
+  .jm-next-card{margin-bottom:24px;}
+  .company-stats-section .stats-block-inner{margin-bottom:36px;}
+}
+@media (max-width:767px){
+  .banner-slider .heading{font-size:32px;}
+  .about .heading,.portfolio-sec .heading,.testimonial-title .heading,.contact-sec .contact-head{font-size:28px;}
+  .about .heading span,.testimonial-title .heading span{font-size:23px;}
+  .portfolio-sec{padding:70px 0;}
+  .jm-reach{padding:30px 24px;}
+}
+
+/* ---------- lightbox controls ----------
+   cubeportfolio.min.css points its prev/next/close buttons at vendor/img/cbp-sprite.png,
+   which this template package does not ship. Replaced with inline SVG so the lightbox
+   controls are visible and operable. */
+.cbp-popup-lightbox .cbp-popup-prev,
+.cbp-popup-lightbox .cbp-popup-next,
+.cbp-popup-lightbox .cbp-popup-close{
+  background-image:none !important;
+  background-color:rgba(21,36,63,.88) !important;
+  border-radius:50%;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+  background-size:22px 22px !important;
+}
+.cbp-popup-lightbox .cbp-popup-prev{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'/%3E%3C/svg%3E") !important;
+}
+.cbp-popup-lightbox .cbp-popup-next{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E") !important;
+}
+.cbp-popup-lightbox .cbp-popup-close{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E") !important;
+}
+.cbp-popup-lightbox .cbp-popup-prev:hover,
+.cbp-popup-lightbox .cbp-popup-next:hover,
+.cbp-popup-lightbox .cbp-popup-close:hover{background-color:var(--jm-navy) !important;}
+.cbp-popup-lightbox-counter{color:#fff; font-size:15px;}
+
+/* ============================================================
+   Specificity corrections and layout fixes.
+   style.css carries deeper selectors for several of these,
+   so each rule below matches or beats its depth.
+   ============================================================ */
+
+/* header sits on the cream diagonal until it is scrolled, so it is dark on cream */
+header .main-navigation .jm-wordmark .jm-wordmark-name{color:var(--jm-navy);}
+header .main-navigation .jm-wordmark .jm-wordmark-role{color:var(--jm-gold-d);}
+header .main-navigation nav .navbar-nav .nav-link{color:var(--jm-navy) !important; font-weight:600;}
+header .main-navigation nav .navbar-nav .nav-link:hover,
+header .main-navigation nav .navbar-nav .nav-link.active{color:var(--jm-gold-d) !important;}
+.inner-header .sidemenu_btn span{background:var(--jm-navy);}
+
+.header-appear{background-color:var(--jm-navy) !important; box-shadow:0 2px 18px rgba(0,0,0,.22);}
+.header-appear .main-navigation .jm-wordmark .jm-wordmark-name{color:#fff;}
+.header-appear .main-navigation .jm-wordmark .jm-wordmark-role{color:var(--jm-gold-l);}
+.header-appear .main-navigation nav .navbar-nav .nav-link{color:#fff !important;}
+.header-appear .main-navigation nav .navbar-nav .nav-link:hover,
+.header-appear .main-navigation nav .navbar-nav .nav-link.active{color:var(--jm-gold-l) !important;}
+.header-appear .sidemenu_btn span{background:#fff;}
+.side-menu .inner-wrapper .side-nav .navbar-nav .nav-link{color:#fff !important;}
+.side-menu .inner-wrapper .side-nav .navbar-nav .nav-link:hover{color:var(--jm-gold-l) !important;}
+
+/* banner */
+.banner-slider .slider-img-area #slider-inner-img{transform:translate(40px,0);}
+.banner-slider .heading-area .heading{font-family:'Playfair Display',Georgia,serif;}
+
+/* about */
+.about .img-sec .green_rectangle{background-color:var(--jm-gold-d) !important;
+  width:52%; height:66%; top:8%; left:0; opacity:.92;}
+.about .img-sec .about_img{position:relative; z-index:2; transform:translateX(26px);}
+.about .img-sec .about_img img{padding-bottom:0; border-radius:4px;}
+
+/* what is next */
+.testimonial-sec .testimonial-title .sub-heading{color:var(--jm-gold-l); font-family:'Roboto',sans-serif;
+  font-size:13px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase;}
+.testimonial-sec .testimonial-title .heading{font-family:'Playfair Display',Georgia,serif;
+  color:#fff; font-size:40px; font-weight:700; line-height:1.2;}
+.testimonial-sec .testimonial-title .heading span{color:var(--jm-sky); font-weight:400; font-size:34px;}
+.testimonial-sec{padding-bottom:110px;}
+
+/* gallery: the template staggers every item that is not in the first column.
+   That is a two column effect and it fights a three column grid, so it is off. */
+.portfolio-sec .cbp-item.even{margin-top:0 !important;}
+.portfolio-sec .container{max-width:1320px;}
+.portfolio-sec .cbp-l-grid-mosaic .cbp-caption-activeWrap{background:transparent !important;}
+.portfolio-sec .section-heading .heading{font-family:'Playfair Display',Georgia,serif; color:var(--jm-navy);}
+.portfolio-sec .cbp-l-filters-button .cbp-filter-item{border-bottom:1px solid var(--jm-line);}
+.portfolio-sec .cbp-l-filters-button .cbp-filter-item:hover{color:#fff !important; background:var(--jm-navy) !important; border-color:var(--jm-navy) !important;}
+.portfolio-sec .cbp-l-filters-button .cbp-filter-item-active{color:#fff !important; background:var(--jm-navy) !important; border-color:var(--jm-navy) !important;}
+
+/* contact */
+.contact-sec .contact-details .country{font-family:'Playfair Display',Georgia,serif;
+  color:var(--jm-navy); font-size:20px; margin:28px 0 14px;}
+.contact-sec .contact-details ul li{color:var(--jm-body); font-size:16px;}
+.contact-sec .contact-details ul li i{color:var(--jm-gold-d);}
+.contact-sec .contact-details ul li a{color:var(--jm-body);}
+.contact-sec .contact-details ul li a:hover{color:var(--jm-gold-d);}
+
+@media (min-width:992px){
+  .contact-sec .contact-details{padding-right:40px;}
+}
+@media (max-width:991px){
+  .about .img-sec .about_img{transform:none;}
+  .about .img-sec .green_rectangle{display:none;}
+  .banner-slider .slider-img-area #slider-inner-img{transform:none;}
+  .portfolio-sec .container{max-width:100%;}
+}
+
+/* ---- round two ---- */
+/* the gold block is anchored to the photo, not to the column, which is as tall
+   as the text beside it */
+.about .img-sec .green_rectangle{display:none;}
+.about .img-sec .about_img::before{content:''; position:absolute; left:-26px; top:-26px;
+  width:58%; height:100%; background:var(--jm-gold-d); opacity:.92; border-radius:4px; z-index:-1;}
+
+/* filter buttons */
+.portfolio-sec .cbp-l-filters-button{display:flex; flex-wrap:wrap; gap:10px;}
+.portfolio-sec .cbp-l-filters-button .cbp-filter-item{display:inline-block; width:auto; float:none;
+  white-space:nowrap; margin:0; padding:10px 22px; border:1px solid var(--jm-line);
+  border-radius:2px; background:transparent; color:var(--jm-body); font-size:14px; font-weight:600;}
+
+/* keep the pool caption clear of the cream diagonal below it */
+.testimonial-sec{padding-bottom:260px;}
+.jm-next-fig{margin:56px 0 0;}
+
+/* equal height cards */
+.jm-next-row > [class*="col-"]{display:flex;}
+.jm-next-card{width:100%;}
+
+@media (max-width:991px){
+  .about .img-sec .about_img::before{display:none;}
+  .testimonial-sec{padding-bottom:170px;}
+}
+
+/* ---- round three ---- */
+@media (min-width:992px){
+  .about .container > .row{align-items:center;}
+}
+.contact-sec .contact-details ul li{align-items:center;}
+
+/* ---- mobile and tablet ---- */
+@media screen and (max-width:991px){
+  .inner-header{background-color:var(--jm-navy) !important;}
+  .inner-header.header-appear{background-color:var(--jm-navy) !important;}
+  header .main-navigation .jm-wordmark .jm-wordmark-name{color:#fff;}
+  header .main-navigation .jm-wordmark .jm-wordmark-role{color:var(--jm-gold-l);}
+  .inner-header .sidemenu_btn span{background:#fff;}
+  /* long form copy reads badly centered */
+  .about .heading-area,
+  .about .heading-area .heading,
+  .about .heading-area .text,
+  .about .feature-item,
+  .banner-slider .heading-area{text-align:left !important;}
+  .about .feature-item{display:flex !important;}
+  .about .feature-item .laptop-features-icon .icon{margin:0;}
+  .banner-slider .heading-area .text{width:auto;}
+  .about .img-sec{margin-bottom:34px;}
+  .about .img-sec .about_img,
+  .about .img-sec .margin_about-img{margin-left:0;}
+}
+@media screen and (max-width:767px){
+  .banner-slider .heading-area .heading{font-size:32px;}
+  .about .heading-area .heading{font-size:28px;}
+  .contact-sec .contact-details,
+  .contact-sec .contact-details ul li{text-align:left;}
+  .contact-sec .contact-head{text-align:left;}
+}
+
+@media screen and (max-width:991px){
+  .about .feature-item .features-content{text-align:left; padding-left:18px; display:block;}
+  .banner-slider .slider-img-area #slider-inner-img{width:100%; padding-top:0; transform:none;}
+}
+
+@media screen and (max-width:991px){
+  .contact-sec .contact-details ul li{display:flex !important; flex-direction:row; align-items:flex-start;
+    text-align:left; gap:12px;}
+  .contact-sec .contact-details ul li i{margin:2px 0 0 0 !important; flex:0 0 auto;}
+  .contact-sec .contact-details .country{text-align:left;}
+  .jm-next-card,.jm-reach,.jm-reach .contact-heading,.jm-reach .contact-para{text-align:left;}
+  .jm-next-icon{margin-left:0;}
+}
+
+/* ============================================================
+   Round four. Contrast corrections from the pixel audit.
+   ============================================================ */
+
+/* The header used to take its colour from whatever the banner diagonal put
+   behind it, which changed with viewport width and failed at 1280. It now
+   carries its own ground at every width. */
+.inner-header{background-color:var(--jm-navy) !important;}
+.inner-header.header-appear{background-color:var(--jm-navy) !important;}
+header .main-navigation .jm-wordmark .jm-wordmark-name{color:#fff !important;}
+header .main-navigation .jm-wordmark .jm-wordmark-role{color:var(--jm-gold-l) !important;}
+header .main-navigation nav .navbar-nav .nav-link{color:#fff !important;}
+header .main-navigation nav .navbar-nav .nav-link:hover,
+header .main-navigation nav .navbar-nav .nav-link.active{color:var(--jm-gold-l) !important;}
+.inner-header .sidemenu_btn span{background:#fff !important;}
+
+/* side menu was yellow under white links */
+.side-menu{background:var(--jm-navy) !important;}
+.side-menu .btn-close::before,.side-menu .btn-close::after{background:#fff !important;}
+.side-menu .inner-wrapper .side-nav .navbar-nav .nav-link{color:#fff !important;}
+.side-menu .inner-wrapper .side-nav .navbar-nav .nav-link:hover{color:var(--jm-gold-l) !important;}
+.side-menu .jm-wordmark .jm-wordmark-name{color:#fff !important;}
+
+/* gallery captions sit on photographs, so they need their own ground */
+.portfolio-sec .cbp-l-grid-mosaic .cbp-caption-activeWrap{
+  background:linear-gradient(to top,rgba(8,14,26,.94) 0%,rgba(8,14,26,.86) 42%,rgba(8,14,26,.58) 100%) !important;}
+.portfolio-sec .cbp-l-grid-mosaic .p-hover-title{color:#fff;}
+.portfolio-sec .cbp-l-grid-mosaic .p-hover-des{color:#E6E9EF;}
+
+/* The banner wedge used to run the full height of the hero and its hypotenuse
+   crossed the headline at 1280, putting white type on cream. It is now held to
+   the right of the text column at every width it is shown. */
+#banner-header-svg{left:auto; right:0; width:56%; height:58%;}
+@media (max-width:1279px){ #banner-header-svg{width:50%; height:50%;} }
+
+/* heading levels were corrected for document outline; the template styled these
+   by tag name, so the styles are reattached by class */
+.about .feature-item .features-content .jm-feature-title{
+  font-family:'Playfair Display',Georgia,serif; color:#fff; font-size:21px; margin-bottom:8px; font-weight:700;}
+.portfolio-sec .cbp-l-grid-mosaic h3.p-hover-title{
+  font-family:'Playfair Display',Georgia,serif; color:#fff; font-size:22px; margin-bottom:4px; font-weight:700;}
+.contact-sec .contact-details h3.country{
+  font-family:'Playfair Display',Georgia,serif; color:var(--jm-navy); font-size:20px;
+  margin:28px 0 14px; font-weight:700;}
+@media (max-width:991px){
+  .about .feature-item .features-content .jm-feature-title{font-size:20px;}
+}
